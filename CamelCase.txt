@@ -1,0 +1,35 @@
+function toCamelCase(str){
+  
+    if (!str) {
+    return (""); 
+  }
+  
+    var newStr = "";    
+    var newArr = [];
+    
+    if (str.includes("-") && str.includes("_")) {
+     newArr = str.split(/[-_]/);
+     for(var i = 1 ; i < newArr.length ; i++){
+        newArr[i] = newArr[i].charAt(0).toUpperCase() + newArr[i].substr(1);
+    } 
+
+      newStr = newArr.join("");
+    return newStr;
+ } else if (str.includes("-")) {
+     newArr = str.split("-");
+        for(var i = 1 ; i < newArr.length ; i++){
+        newArr[i] = newArr[i].charAt(0).toUpperCase() + newArr[i].substr(1);
+    } 
+
+    newStr = newArr.join("");
+    return newStr;
+ } else if (str.includes("_")) {
+     newArr = str.split("_");
+     for(var i = 1 ; i < newArr.length ; i++){
+        newArr[i] = newArr[i].charAt(0).toUpperCase() + newArr[i].substr(1);
+    } 
+
+    newStr = newArr.join("");
+    return newStr;
+ }
+}
